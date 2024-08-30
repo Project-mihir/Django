@@ -1,0 +1,33 @@
+<!-- templates/blog/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Blog Management{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'blog_list' %}">Home</a></li>
+                <li><a href="{% url 'blog_create' %}">Create Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blog Management System</p>
+    </footer>
+
+    <script src="{% static 'blog/js/scripts.js' %}"></script>
+</body>
+</html>
